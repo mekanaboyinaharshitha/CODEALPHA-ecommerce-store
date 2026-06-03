@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:15px;
+width:300px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#22c55e;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Register</h2>
+
+<input id="u" placeholder="Username">
+<input id="p" placeholder="Password">
+
+<button onclick="registerUser()">Register</button>
+</div>
+
+<script>
+function registerUser() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    fetch("/api/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+
+        if (data.message.includes("Registered")) {
+            window.location.href = "login.html";
+        }
+    });
+}
+</script>
+
+</body>
+</html>

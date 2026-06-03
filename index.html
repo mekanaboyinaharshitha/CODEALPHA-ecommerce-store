@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeAlpha Book Store</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* Hero Section */
+.hero{
+    min-height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:700px;
+    line-height:1.6;
+    margin-bottom:30px;
+    color:#d1d5db;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.primary{
+    background:#38bdf8;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+}
+
+.secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.secondary:hover{
+    background:white;
+    color:black;
+}
+
+/* Features */
+.features{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* Featured Books */
+.books{
+    padding:80px 8%;
+}
+
+.book-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.book{
+    background:white;
+    color:black;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    transition:0.4s;
+}
+
+.book:hover{
+    transform:scale(1.05);
+}
+
+.book img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.book h3{
+    margin:15px;
+}
+
+.price{
+    color:#2563eb;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.buy-btn{
+    display:block;
+    margin:20px;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    margin-top:50px;
+}
+
+footer p{
+    color:#9ca3af;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:40px;
+}
+.hero p{
+font-size:18px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">📚 BookStore</div>
+
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+    <h1>Level Up Your <span>Programming Skills</span></h1>
+
+    <p>
+        Explore the best books for Java, Python, Web Development,
+        Data Structures and modern technologies.
+    </p>
+
+    <div>
+        <a href="products.html" class="btn primary">🛒 Shop Now</a>
+        <a href="cart.html" class="btn secondary">View Cart</a>
+    </div>
+</section>
+
+<section class="features">
+
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🚀 Fast Delivery</h3>
+            <p>Get your favorite books quickly and securely.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Premium Collection</h3>
+            <p>Best programming and technology books.</p>
+        </div>
+
+        <div class="card">
+            <h3>💳 Easy Checkout</h3>
+            <p>Simple shopping experience with cart support.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="books">
+
+<h2 class="section-title">Featured Books</h2>
+
+<div class="book-grid">
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600" alt="">
+<h3>Java Book</h3>
+<p class="price">₹300</p>
+<a href="products.html" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=600" alt="">
+<h3>Python Book</h3>
+<p class="price">₹450</p>
+<a href="products.html" class="buy-btn">Buy Now</a>
+</div>
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600" alt="">
+<h3>Web Development Book</h3>
+<p class="price">₹500</p>
+<a href="products.html" class="buy-btn">Buy Now</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+    <p>© 2026 CodeAlpha Book Store | Developed by Harshitha</p>
+</footer>
+
+</body>
+</html>
